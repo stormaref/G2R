@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Package extension
-        run: npx @vscode/vsce package --no-yarn --allow-missing-files
+        run: npx @vscode/vsce package --no-yarn
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
@@ -57,6 +57,6 @@ jobs:
         run: npm ci
 
       - name: Publish to marketplace
-        run: npx @vscode/vsce publish --no-yarn --allow-missing-files
+        run: npx @vscode/vsce publish --no-yarn
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
